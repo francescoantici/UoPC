@@ -80,7 +80,7 @@ python3 predict.py -v "<comma-separated job feature values>"
 - `-v` or `--values`: **(required)** Comma-separated values for the job features as specified in your `config.json` under `"job_features"`.
 - `-c` or `--congig`: **(optional)** Path to the configuration file, defaults to `config.json`.
 - `-d` or `--user-dataset`: **(optional)** Path to your user dataset file (CSV, Parquet, or JSON). If not provided, the path in `config.json` will be used.
-- `-od` or `--override-dataset`: **(optional)** Set to `True` to override and re-encode the user dataset.
+- `-od` or `--override-dataset`: **(optional)** Set to `True` to override and save the encoding for the user dataset.
 
 #### Example
 
