@@ -27,7 +27,7 @@ Before running predictions, you need to configure the `config.json` file. This f
 {
     "theta":50,
     "k":5,
-    "user_dataset":"examples/ex.csv",
+    "user_dataset":"data/user_data.csv",
     "job_features":[
         "job_name",
         "num_cores",
