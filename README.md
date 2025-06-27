@@ -5,3 +5,7 @@ It achieves only a 10% prediction error on more than 700k job data extracted fro
 
 Our approach can predict average and maximum job power consumption, and it can be used to estimate the whole system power consumption with an error of only 4\%.
 By employing a k-nearest neighbours (KNN) prediction model augmented with Natural Language Processing, UoPC streamlines prediction processes for newly submitted jobs. It requires only limited historical data, making it practical for diverse high-performance computing environments and workloads.
+
+## How to use
+
+

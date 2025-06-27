@@ -4,8 +4,8 @@ class KNN:
     
     name = "KNN"
     
-    def __init__(self, **kwargs):
-        self._model =  KNeighborsClassifier(**kwargs)
+    def __init__(self, k, **kwargs):
+        self._model =  KNeighborsClassifier(n_neighbors=k, **kwargs)
     
     def train(self, x: list, y: list) -> bool:
         try:
