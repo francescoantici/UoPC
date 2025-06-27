@@ -13,8 +13,11 @@ if __name__ == "__main__":
     
     # Add parser for the arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument("-d", "--user-dataset", type=str, required=False)
-    parser.add_argument("-v", "--values", type=str, required=True)
+    parser.add_argument("-d", "--user-dataset", type=str, required=False, help="Path to the user dataset file")
+    parser.add_argument("-c", "--config", type=str, required=False, default="config.json",
+                        help="Path to the configuration file")
+    parser.add_argument("-v", "--values", type=str, required=True, nargs='+',
+                        help="Values of the job features to predict, e.g. -v 'feature1 value1' 'feature2 value2'")
     parser.add_argument("-od", "--override-dataset", type=bool, default=False, required=False,
                         help="Override the user dataset with the new one")
     
@@ -50,7 +53,9 @@ if __name__ == "__main__":
     job_features = args.values
     
     # Return the prediction
-    new_job_encoding = encoder.encode_job(job_features)
-    print(predictive_model.predict([new_job_encoding])[0])
+    new_jobs_encodings = [encoder.encode_job(jf) for jf in job_features]
+    predicted_values = predictive_model.predict(new_jobs_encodings)
+    for job_input, predcited_value in zip(job_features, predicted_values):
+        print(f"Job: {job_input}, Predicted Value: {predcited_value}")
     
     
